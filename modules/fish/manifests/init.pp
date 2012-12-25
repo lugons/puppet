@@ -7,9 +7,9 @@ class fish
 
   file
   {
-    "/root/important/$fish_package":
+    "/var/cache/apt/archives/$fish_package":
       ensure  => present,
-      source  => "puppet:///modules/fish/root/important/$fish_package",
+      source  => "puppet:///modules/fish//var/cache/apt/archives/$fish_package",
       mode    => 644,
       require => Exec["apt-get-update"],
   }
@@ -19,7 +19,7 @@ class fish
     "fishfish":
       ensure   => installed,
       provider => dpkg,
-      source   => "/root/important/$fish_package",
-      require  => File["/root/important/$fish_package"],
+      source   => "/var/cache/apt/archives/$fish_package",
+      require  => File["/var/cache/apt/archives/$fish_package"],
   }
 }
