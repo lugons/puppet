@@ -8,7 +8,8 @@ class root
     "root":
       ensure  => present,
       shell   => "/usr/local/bin/fish",
-      require => Package["fish"],
+      require => Package["fishfish"],
+  }
 
   file
   {
