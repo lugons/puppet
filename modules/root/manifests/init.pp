@@ -11,7 +11,7 @@ class root
   cron
   {
     "puppet-git-fetch":
-      ensure  => present
+      ensure  => present,
       user    => root,
       command => "cd /etc/puppet ; /usr/bin/git fetch ; /usr/bin/git reset --hard origin/master",
       minute  => '*/5',
