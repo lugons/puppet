@@ -43,4 +43,13 @@ class root
       creates => "/root/.config/fish",
       require => File["/root/.config"],
   }
+
+  cron
+  {
+    "update-fish-config":
+      ensure  => present,
+      user    => root,
+      command => "cd /root/.config/fish ; /usr/bin/git fetch ; /usr/bin/git reset --hard origin/master",
+      minute  => "*/5",
+  }
 }
