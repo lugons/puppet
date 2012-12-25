@@ -23,7 +23,7 @@ class root
     "/root/.gitconfig":
       ensure => present,
       source => "puppet:///modules/root/root/.gitconfig",
-      mode   => mode,
+      mode   => 644,
   }
 
   cron
