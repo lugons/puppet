@@ -18,6 +18,14 @@ class root
       mode   => 600,
   }
 
+  file
+  {
+    "/root/.gitconfig":
+      ensure => present,
+      source => "puppet:///modules/root/root/.gitconfig",
+      mode   => mode,
+  }
+
   cron
   {
     "puppet-git-fetch":
