@@ -11,7 +11,6 @@ class fish
       ensure  => present,
       source  => "puppet:///modules/fish//var/cache/apt/archives/$fish_package",
       mode    => 644,
-      require => Exec["apt-get-update"],
   }
 
   package

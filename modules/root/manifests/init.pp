@@ -1,6 +1,5 @@
 class root
 {
-
   include "fish"
 
   user
