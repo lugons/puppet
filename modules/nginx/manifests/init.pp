@@ -8,4 +8,12 @@ class nginx {
       ensure  => installed,
       require => Exec["apt-get-update"],
   }
+
+  service
+  {
+    "nginx":
+      ensure    => running,
+      hasstatus => true,
+      enable    => true,
+  }
 }
